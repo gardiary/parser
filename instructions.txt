@@ -1,0 +1,24 @@
+[Prerequisites]
+1. Set up DB and table (sql/db_schema.sql)
+2. Change file 'com.ef.util.DBUtil' accordingly (db host, db username, db password)
+
+
+[Build using Maven]
+1. Go to project root folder
+2. Run "mvn clean install package", 'parser.jar' created inside 'target' folder.
+
+
+[Run Using JAR]
+1. Go to project root folder
+2. Go to 'target' folder (cd target/)
+3. Run example:
+java -cp "parser.jar:../lib/mysql-connector-java-5.1.30.jar" com.ef.Parser --accesslog=/path/to/access.log --startDate=2017-01-01.00:00:00 --duration=daily --threshold=500
+OR
+java -cp "parser.jar:../lib/mysql-connector-java-5.1.30.jar" com.ef.Parser --accesslog=/path/to/access.log --startDate=2017-01-01.00:00:00 --duration=daily --threshold=500 --ip=192.168.51.205
+OR
+java -cp "parser.jar:../lib/mysql-connector-java-5.1.30.jar" com.ef.ParserTwo --accesslog=/path/to/access.log --startDate=2017-01-01.00:00:00 --duration=daily --threshold=500
+
+
+[Run Using Maven]
+1. Go to project root folder
+2. Run "mvn exec:java"
